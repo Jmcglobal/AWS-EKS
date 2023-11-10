@@ -59,10 +59,10 @@ eksctl create iamserviceaccount \
 ```
 
 #### Adding the Amazon EBS CSI driver add-on (AmazonEKS_EBS_CSI_DriverRole is a role name)
-eksctl create addon --name aws-ebs-csi-driver --cluster <cluster-name> --service-account-role-arn arn:aws:iam::<aws accound ID>:role/AmazonEKS_EBS_CSI_DriverRole --force
+eksctl create addon --name aws-ebs-csi-driver --cluster "cluster-name" --service-account-role-arn arn:aws:iam::<"aws accound ID">:role/AmazonEKS_EBS_CSI_DriverRole --force
 
 #### Remove EBS CSI Driver
-eksctl delete addon --cluster <cluster-name> --name aws-ebs-csi-driver --preserve
+eksctl delete addon --cluster "cluster-name" --name aws-ebs-csi-driver --preserve
 
 ### Note
 ```

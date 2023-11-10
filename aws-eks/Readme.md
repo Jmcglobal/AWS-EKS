@@ -63,10 +63,10 @@ eksctl create nodegroup --cluster=my-cluster \
 
 #### DELETE CLUSTER AND NODE GROUPS
 ##### Delete Nodegroup
-eksctl delete nodegroup –cluster=<cluster-name> –name=<nodegroup-name>
+eksctl delete nodegroup –cluster=<"cluster-name> –name=<"nodegroup-name>
 
 #### Delete cluster
-eksctl delete cluster <cluster-name>
+eksctl delete cluster <"cluster-name>
 
 ## KUBERNETES IMPERATIVE COMMANDS
 
@@ -77,24 +77,24 @@ eksctl delete cluster <cluster-name>
 kubectl get pods
 
 #### Describe a pod
-kubectl describe pod <pod-name>
+kubectl describe pod <"pod-name>
 
 #### Delete Pod
-kubectl delete pod <pod-name>
+kubectl delete pod <"pod-name>
 
 #### Expose pod service
-kubectl expose pod <pod-name> --type=<types either ClusterIP or NodePort> --name=<service-name> --port <port-number from 30000>
+kubectl expose pod <"pod-name> --type=<"types either ClusterIP or NodePort> --name=<"service-name> --port <"port-number from 30000>
 
 #### Get pods log
-kubectl logs <pod-name>
+kubectl logs <"pod-name>
 
 #### Stream pods logs
-kubectl logs -f <pod-name>
+kubectl logs -f <"pod-name>
 
 #### Run Commands inside the pod
-kubectl exec -it <pod-name> ls
-kubectl exec -it <pod-name> env
-kubectl exec -it <pod-name> cat /usr/share/nginx/html/index.html
+kubectl exec -it <"pod-name> ls
+kubectl exec -it <"pod-name> env
+kubectl exec -it <"pod-name> cat /usr/share/nginx/html/index.html
 
 #### ReplicaSet
 
@@ -124,10 +124,10 @@ spec:
 kubectl create -f replicaset.yaml
 
 #### Expose ReplicaSet Service imperative command
-kubectl expose rs <replicaset-name> --type NodePort --port <container-port-number> --name rs-svc
+kubectl expose rs <"replicaset-name> --type NodePort --port <"container-port-number> --name rs-svc
 
 #### Delete replicaset
-kubectl delete rs <rs-name>
+kubectl delete rs <"rs-name>
 
 ## DEPLOYMENT
 
@@ -143,34 +143,34 @@ Canary Deployment
 ```
 
 #### Create a Deployment
-kubectl create deployment <deployment-name> --image=stacksimplify/kubenginx:1.0.0 
+kubectl create deployment <"deployment-name> --image=stacksimplify/kubenginx:1.0.0 
 
 #### Scale Deployment
-kubectl scale --replicas=3 deploy/<deployment-name>
+kubectl scale --replicas=3 deploy/<"deployment-name>
 
 #### Expose deployment as a service
-kubectl expose deployment <deployment-name> --type NodePort --port <container-port> --name <service-name>
+kubectl expose deployment <"deployment-name> --type NodePort --port <"container-port> --name <"service-name>
 
 #### Update the Deployment to new Version of image
-kubectl set image deployment/<deployment-name>  <container-name> <image-name>
+kubectl set image deployment/<"deployment-name>  <"container-name> <"image-name>
 
 #### Verify Rollout Status
-kubectl rollout status deploy/<deploy-name>
+kubectl rollout status deploy/<"deploy-name>
 
 #### Roll BAck to Previous Version
-kubectl rollout undo deploy/<deploy-name>
+kubectl rollout undo deploy/<"deploy-name>
 
 ### View deployment history revision
-kubectl rollout history deploy/<deploy-name>
+kubectl rollout history deploy/<"deploy-name>
 
 #### Roll back deployment to specific revision
-kubectl rollout undo deploy/<deploy-name> --to-revision=<number>
+kubectl rollout undo deploy/<"deploy-name> --to-revision=<"number>
 
 #### Update Deployment using edit command
-kubectl edit deployment <deploy-name>
+kubectl edit deployment <"deploy-name>
 
 #### Restart Deployment
-kubectl rollout restart deploy/<deployment-name>
+kubectl rollout restart deploy/<"deployment-name">
 
 #### Pause Ddeployment  
 ```
@@ -181,8 +181,8 @@ kubectl rollout pause deploy <deployment-name>
 ```
 
 #### Set resources limits on containers
-kubectl set resources deploy <deploy-name> -c=kubenginx --limits=cpu=200m,memory=500Mi
+kubectl set resources deploy <"deploy-name"> -c=kubenginx --limits=cpu=200m,memory=500Mi
 
 #### Delete Deployment
-kubectl delete deploy <deployment-name>
+kubectl delete deploy <"deployment-name>
 
