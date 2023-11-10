@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: hello
+  labels:
+    app: hello
+spec:
+  replicas: 6
+  selector:
+    matchLabels:
+      app: hello
+  template:
+    metadata:
+      labels:
+        app: hello
+    spec:
+      containers:
+      - name: hello-world
+        image: jmcglobal/custom-nginx:latest  
+        imagePullPolicy: IfNotPresent

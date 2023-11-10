@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pod-deployment
+  labels: 
+    app: pod-deploy
+spec:
+  selector:
+    matchLabels:
+      app: pod-deployment
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: pod-deployment
+    spec:
+      containers:
+      - name: nginx-deployment
+        image: jmcglobal/kubenginx:v3
+        ports:
+        - containerPort: 80

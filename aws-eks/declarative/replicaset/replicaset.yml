@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: pod-replica
+  labels:
+    app: pod-rs
+spec:
+  selector:
+    matchLabels:
+      app: pod-rs
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: pod-rs
+    spec:
+      containers:
+      - name: pod-replicaset
+        image: jmcglobal/kubenginx:v2
+        ports:
+        - containerPort: 80

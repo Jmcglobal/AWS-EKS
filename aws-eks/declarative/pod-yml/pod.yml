@@ -1,0 +1,13 @@
+## Pod Declarative Yaml File
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+  labels:
+    app: my-pod
+spec:
+  containers:
+  - name: kubenginx
+    image: jmcglobal/kubenginx:v1
+    ports:
+    - containerPort: 80

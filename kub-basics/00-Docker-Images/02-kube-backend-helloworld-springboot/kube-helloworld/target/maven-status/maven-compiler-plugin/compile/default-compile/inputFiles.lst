@@ -1,0 +1,3 @@
+/Users/macpro/kubernete-master/kub-basics/00-Docker-Images/02-kube-backend-helloworld-springboot/kube-helloworld/src/main/java/com/stacksimplify/helloworld/HelloWorldController.java
+/Users/macpro/kubernete-master/kub-basics/00-Docker-Images/02-kube-backend-helloworld-springboot/kube-helloworld/src/main/java/com/stacksimplify/helloworld/serverinfo/ServerInformationService.java
+/Users/macpro/kubernete-master/kub-basics/00-Docker-Images/02-kube-backend-helloworld-springboot/kube-helloworld/src/main/java/com/stacksimplify/helloworld/HelloworldApplication.java

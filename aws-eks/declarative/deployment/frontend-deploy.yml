@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  labels:
+    tier: frontend
+spec:
+  replicas: 8
+  selector:
+    matchLabels:
+      app: frontend-deploy
+  template:
+    metadata:
+      labels:
+        app: frontend-deploy
+        tier: frontend
+    spec:
+      containers:
+      - name: frontend-nginx
+        image: jmcglobal/frontend-nginx:latest
+        ports:
+        - containerPort: 80

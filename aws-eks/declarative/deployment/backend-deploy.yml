@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-app
+  labels:
+    app: backend-app
+    tier: backend
+spec:
+  selector:
+    matchLabels:
+      app: backend-app
+  replicas: 4
+  template:
+    metadata:
+      labels:
+        app: backend-app
+        tier: backend
+    spec:
+      containers:
+      - name: backend-app
+        image: jmcglobal/backend
+        ports:
+        - containerPort: 8080
