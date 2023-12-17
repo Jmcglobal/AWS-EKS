@@ -174,7 +174,7 @@ kubectl rollout restart deploy/<"deployment-name">
 
 #### Pause Ddeployment  
 ```
-Once you puase rollout deployment, nothing will happen if any chnages is been made on pause mode.
+Once you pause rollout deployment, nothing will happen if any chnages is been made on pause mode.
 
 kubectl rollout pause deploy <deployment-name>
 

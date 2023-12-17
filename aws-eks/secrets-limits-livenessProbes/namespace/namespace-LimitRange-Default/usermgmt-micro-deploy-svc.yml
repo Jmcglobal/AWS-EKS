@@ -4,6 +4,7 @@ metadata:
   name: usermgmt-restapp-service
   labels:
     app: usermgmt-restapp
+  namespace: prod1
 spec:
   selector:
     app: usermgmt-restapp

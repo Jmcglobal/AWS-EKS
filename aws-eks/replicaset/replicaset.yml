@@ -16,5 +16,20 @@ spec:
     spec:
       containers:
       - name: hello-world
-        image: jmcglobal/custom-nginx:latest  
+        image: jmcglobal/nginx:v2 
         imagePullPolicy: IfNotPresent
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rs-svc
+spec:
+  selector:
+    app: hello
+  ports:
+  - name: http
+    port: 80
+    targetPort: 80
+    nodePort: 30030
+  type: NodePort

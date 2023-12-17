@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: usermanagement-dbcreation-script
+  namespace: prod1
+data:
+  mysql_usermgmt.sql: |-
+    DROP DATABASE IF EXISTS usermgmt;
+    CREATE DATABASE usermgmt; 
+
+### Using Configmap to create a table on MYSQL
+#Above configuration will create table usermgmt on mysql

@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: usermgmt-microservice
+  labels:
+    app: usermgmt-restapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: usermgmt-restapp
+  template:
+    metadata:
+      labels:
+        app: usermgmt-restapp
+    spec:
+      containers:
+      - name: usermgmt-restapp
+        image: stacksimplify/kube-usermanagement-microservice:1.0.0
+        ports:
+        - containerPort: 8095
+          name: usermgmt-port
+        env:
+          - name: DB_HOSTNAME
+            # value: "mysql"
+            valueFrom:
+              secretKeyRef:
+                name: mysql-db-credentials
+                key: db-hostname          
+          - name: DB_PORT
+            # value: "3306"
+            valueFrom:
+              secretKeyRef:
+                name: mysql-db-credentials
+                key: db-port            
+          - name: DB_NAME
+            # value: "usermgmt"
+            valueFrom:
+              secretKeyRef:
+                name: mysql-db-credentials
+                key: db-name           
+          - name: DB_USERNAME
+            # value: "root"
+            valueFrom:
+              secretKeyRef:
+                name: mysql-db-credentials
+                key: db-username           
+          - name: DB_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: mysql-db-credentials
+                key: db-password
+        # - name: DB_HOSTNAME
+        #   value: "mysql"
+        # - name: DB_PORT
+        #   value: "3306"
+        # - name: DB_USERNAME
+        #   value: "root"
+        # - name: DB_PASSWORD
+        #   value: "dbpassword11"
+        # - name: DB_NAME  
+          # value: "usermgmt"
+
+## This is how to reference credentials using Secret, it should be encoded with base64
+# echo "password" | base64;

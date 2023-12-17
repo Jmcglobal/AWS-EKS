@@ -38,6 +38,10 @@ Policy
 ### Use kubectl command get IAM role policy of EKS worker node
 kubectl -n kube-system describe configmap aws-auth
 
+```
+You can simply found the iam role on the ec2 instance nodes
+Associate the EBS_CSI_DRIVER policy to the iam role
+```
 ### Associate the policy to the WorkerNode IAM role
 Use aws Console
 
@@ -80,9 +84,8 @@ endpoint = :<port-number/usermgmt/health-status>
 It will respond with <User Management Service UP and RUNNING - V1>
 
 ```
-```
 Access the mysql databases
-
+```
 kubectl run -it --rm --image=mysql:5.6 --restart=Never mysql-client -- mysql -h mysql  -pdbpassword11
 
 ```
