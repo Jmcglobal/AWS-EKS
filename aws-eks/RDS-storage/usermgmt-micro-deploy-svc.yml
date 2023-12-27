@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: usermgmt-restapp-service
+  labels:
+    app: usermgmt-restapp
+spec:
+  selector:
+    app: usermgmt-restapp
+  ports:
+  - name: http
+    port: 8095
+    targetPort: 8095
+    nodePort: 30030
+  type: NodePort

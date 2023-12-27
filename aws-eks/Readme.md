@@ -33,13 +33,13 @@ eksctl create cluster --name=my-cluster --region=us-east-1 --zones=us-east-1a,us
 eksctl get cluster
 
 #### List Node group in a cluster
-eksctl get nodegroup –cluster=my-cluster
+eksctl get nodegroup --cluster=my-cluster
 
 #### eksctl get nodegroup –cluster=my-cluster
 kubectl get nodes -o wide
 
 #### View Config Context
-kubectl config view –minify
+kubectl config view -–minify
 
 
 #### Create & Associate IAM OIDC provider for EKS cluster
@@ -55,7 +55,7 @@ appmesh-access
 alb-ingress-access
 
 ```
-eksctl create nodegroup --cluster=my-cluster \
+eksctl create nodegroup --cluster=cluster \
  --region=us-east-1 --name=eks-node --node-type=t3.medium \
  --nodes=2 --nodes-min=2 --nodes-max=4 --node-volume-size=20 \
 --ssh-access --ssh-public-key=virginia --managed --asg-access \

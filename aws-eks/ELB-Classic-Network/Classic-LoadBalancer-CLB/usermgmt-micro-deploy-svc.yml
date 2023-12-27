@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: lb-usermgmt-restapp-service
+  labels:
+    app: usermgmt-restapp
+spec:
+  selector:
+    app: usermgmt-restapp
+  ports:
+  - name: http
+    port: 80
+    targetPort: 8095
+    # nodePort: 30030
+  type: LoadBalancer ## Default load balancer to be created is Classic Loadbalancers
