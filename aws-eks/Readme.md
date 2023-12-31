@@ -27,7 +27,7 @@ https://docs.docker.com/desktop/
 https://kubernetes.io/docs/reference/kubectl/cheatsheet/
 
 #### Create cluster control plane without node group
-eksctl create cluster --name=my-cluster --region=us-east-1 --zones=us-east-1a,us-east-1b --without-nodegroup
+eksctl create cluster --name=cluster --region=us-east-1 --zones=us-east-1a,us-east-1b --without-nodegroup
 
 #### Get list of cluster
 eksctl get cluster
@@ -44,7 +44,7 @@ kubectl config view -–minify
 
 #### Create & Associate IAM OIDC provider for EKS cluster
 ###### To enable and use AWS IAM roles for Kubernetes service accounts on our EKS cluster, we must create &  associate OIDC identity provider
- eksctl utils associate-iam-oidc-provider --region us-east-1 --cluster my-cluster --approve
+ eksctl utils associate-iam-oidc-provider --region us-east-1 --cluster eks-cluster --approve
 
 #### Create Node Group with additional Add-Ons in public Subnets
 ```
@@ -55,7 +55,7 @@ appmesh-access
 alb-ingress-access
 
 ```
-eksctl create nodegroup --cluster=cluster \
+eksctl create nodegroup --cluster=eks-cluster \
  --region=us-east-1 --name=eks-node --node-type=t3.medium \
  --nodes=2 --nodes-min=2 --nodes-max=4 --node-volume-size=20 \
 --ssh-access --ssh-public-key=virginia --managed --asg-access \

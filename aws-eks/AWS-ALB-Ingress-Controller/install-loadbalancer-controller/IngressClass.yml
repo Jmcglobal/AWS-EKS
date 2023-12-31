@@ -1,0 +1,11 @@
+# If we have multiple Ingress Controllers running in our kubernetes cluster, how to identify to which,
+# ingress controller our Ingress Resource/Service should be associated to. 
+
+apiVersion: networking.k8s.io/v1
+kind: IngressClass
+metadata:
+  name: my-aws-ingress-class
+  annotations:
+    ingressclass.kubernetes.io/is-default-class: "true"
+spec:
+  controller: ingress.k8s.aws/alb
