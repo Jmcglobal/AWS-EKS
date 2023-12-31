@@ -17,3 +17,15 @@
 - Go to route53, and create a subdomain reecord, alias, and point it to ingress load-balancer
 
 - Access it with https://food.clobal.com/<path> | If your ingress rules is path pattern
+
+## NOTE
+
+The domain is listening on port 80, and if anyone access it on port 80, it will access the application unencrypted
+
+- For redirection from port 80 to port 443
+
+- Add another ingress anotation
+
+```
+    alb.ingress.kubernetes.io/ssl-redirect: '443' 
+```

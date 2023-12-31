@@ -44,7 +44,7 @@ kubectl config view -–minify
 
 #### Create & Associate IAM OIDC provider for EKS cluster
 ###### To enable and use AWS IAM roles for Kubernetes service accounts on our EKS cluster, we must create &  associate OIDC identity provider
- eksctl utils associate-iam-oidc-provider --region us-east-1 --cluster eks-cluster --approve
+ eksctl utils associate-iam-oidc-provider --region us-east-1 --cluster cluster --approve
 
 #### Create Node Group with additional Add-Ons in public Subnets
 ```
