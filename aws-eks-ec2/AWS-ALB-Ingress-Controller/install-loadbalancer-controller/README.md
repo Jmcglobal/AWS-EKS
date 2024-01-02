@@ -50,7 +50,7 @@ eksctl utils associate-iam-oidc-provider \
 # Replace with region & cluster name (Section-01-02)
 eksctl utils associate-iam-oidc-provider \
     --region us-east-1 \
-    --cluster eksdemo1 \
+    --cluster cluster \
     --approve
 
 # Create EKS NodeGroup in VPC Private Subnets (Section-07-01)
@@ -153,7 +153,7 @@ aws iam create-policy \
 - Make a note of Policy ARN as we are going to use that in next step when creating IAM Role.
 ```t
 # Policy ARN 
-Policy ARN:  arn:aws:iam::856671738330:policy/AWSLoadBalancerControllerIAMPolicy
+Policy ARN: arn:aws:iam::856671738330:policy/AWSLoadBalancerControllerIAMPolicy
 ```
 
 
@@ -312,7 +312,7 @@ helm install aws-load-balancer-controller eks/aws-load-balancer-controller \
   --set serviceAccount.create=false \
   --set serviceAccount.name=aws-load-balancer-controller \
   --set region=us-east-1 \
-  --set vpcId=vpc-0a5ea6ac8f2abbb15 \
+  --set vpcId=vpc-09cba4782a58cc1fd \
   --set image.repository=602401143452.dkr.ecr.us-east-1.amazonaws.com/amazon/aws-load-balancer-controller
 ```
 - **Sample output for AWS Load Balancer Controller Install steps**
